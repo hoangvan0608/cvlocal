@@ -6,6 +6,7 @@ import com.bezkoder.cv_management.Entity.TicketEntity;
 import com.bezkoder.cv_management.Form.TicketFormCreate;
 import com.bezkoder.cv_management.Repository.TicketRepository;
 import com.bezkoder.cv_management.Service.TicketService;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +17,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(value = "api/v1/tickets")
 public class TicketController {
 
-    @Autowired
-    ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
-    @Autowired
-    TicketService ticketService;
+    private final TicketService ticketService;
 
-    @Autowired
-    TicketRepository ticketRepository;
 
     @GetMapping()
     public List<TicketDTO> getTicketDTOList(){

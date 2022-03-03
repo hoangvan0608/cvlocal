@@ -43,7 +43,7 @@ public class TicketEntity extends BaseModel{
     private List<TicketDepRelationEntity>  listDeps;
 
     @OneToMany(mappedBy = "ticketEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<TicketUserRelationEntity> PIC;
+    private List<TicketUserRelationEntity> lstPic;
 
     @ManyToOne
     @JoinColumn(name = "job_id", nullable = false)
@@ -53,17 +53,17 @@ public class TicketEntity extends BaseModel{
     @JoinColumn(name = "level_id", nullable = false)
     private LevelEntity  levelEntity;
 
-    public TicketEntity(String fullName, String cvUrl, String status, String priority, LocalDate start, LocalDate deadline, String description) {
-        this.fullName = fullName;
-        this.cvUrl = cvUrl;
-        this.status = status;
-        this.priority = priority;
-        this.start = start;
-        this.deadline = deadline;
-        this.description = description;
-    }
+//    public TicketEntity(String fullName, String cvUrl, String status, String priority, LocalDate start, LocalDate deadline, String description) {
+//        this.fullName = fullName;
+//        this.cvUrl = cvUrl;
+//        this.status = status;
+//        this.priority = priority;
+//        this.start = start;
+//        this.deadline = deadline;
+//        this.description = description;
+//    }
 
-    public TicketEntity() {
-
-    }
+//    public TicketEntity() {
+//
+//    }
 }

@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-//@EntityListeners(AuditingEntityListener.class)
 @IdClass(TicketDepartmentId.class)
 @Table(name = "ticket_department")
 public class TicketDepRelationEntity extends BaseModel{
